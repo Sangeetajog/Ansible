@@ -2,8 +2,12 @@
 - hosts: all
   become: yes
   tasks:
-      - name: install tree
+      - name: install Apache2
         apt:
-           name: tree
+           name: Apache2
            state: present
+      - name: Apache service
+        service: 
+            name: Apache2
+            state: started
 
